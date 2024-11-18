@@ -1,57 +1,26 @@
 #Tyler Coffie
 #11/18/2024
 
-def dime(money_left):
+def denominations_calc(money_left,dom):
     items = 0
-    money_left = round(money_left, 2)  # Round to handle potential precision issues
+    money_left = round(money_left, 2)  # Round initial value to handle potential precision issues
 
-    while money_left >= 0.10:  # Continue until less than a dime remains
+    while money_left >= dom:
         items += 1
-        money_left = round(money_left - 0.10, 2)  # Subtract and round to avoid floating-point errors
-
-    return money_left, items
-
-def nickel(money_left):
-    items = 0
-    money_left = round(money_left, 2)  # Round to handle potential precision issues
-
-    while money_left >= 0.05:  # Continue until less than a nickel remains
-        items += 1
-        money_left = round(money_left - 0.05, 2)  # Subtract and round to avoid floating-point errors
-
-    return money_left, items
-
-
-def penny(money_left):
-    items = 0
-    money_left = round(money_left, 2)  # Round to handle potential precision issues
-
-    while money_left >= 0.01:  # Continue until less than a penny remains
-        items += 1
-        money_left = round(money_left - 0.01, 2)  # Subtract and round to avoid floating-point errors
+        money_left = round(money_left - dom, 2)  # Subtract and round to avoid errors
 
     return money_left, items
 
 def main(money):
-    money_left = round(money, 2)
-    total_items = 0  # Track total items
-
-    while money_left > 0:
-        money_left, items = dime(money_left)
-        total_items += items  # Accumulate items from the dime function
-
-        money_left, items = nickel(money_left)
-        total_items += items  # Accumulate items from the nickel function
-
-
-        money_left, items = penny(money_left)
-        total_items += items  # Accumulate items from the penny function
+    denom_list = [100, 50, 20, 10, 5, 1, 0.25, 0.10, 0.05, 0.01]
+    money_left = round(money,2)
+    total_items = 0
+    loop_val = 0
+    while (money_left > 0) and loop_val < len(denom_list):
+        [money_left, items] = denominations_calc(money_left,denom_list[loop_val])
+        total_items += items
+        loop_val += 1
     return total_items
-
-
-
-
-
 
 
 
