@@ -35,3 +35,15 @@ class TestVarietyChange:
     def test_103_17(self):
         money = 103.17
         assert main(money) == 8
+    
+    def test_99_99(self):
+        money = 99.99
+        assert main(money) == 17
+
+
+#Edge cases tests
+
+class TestEdgeCases:
+    def test_0(self):
+        money = 0
+        assert main(money) == 0
