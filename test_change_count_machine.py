@@ -61,3 +61,23 @@ class TestEdgeCases:
         assert total_items == 0
         assert denom_counts == {}
 
+    def test_trailing_0(self):
+        money = 5.00000000000
+        total_items, denom_counts = main(money)
+        total_items = 1
+        denom_counts = {5: 1}
+
+    def test_bad_num(self):    #In the future if given as input this will not be allowed but for logic testing this should be the result
+        money = -1
+        total_items, denom_counts = main(money)
+        total_items = 0
+        denom_counts = {}
+
+    def test_rounding(self):    #In the future if given as input this will not be allowed but for logic testing this should be the result
+        money = 7.005
+        total_items, denom_counts = main(money)
+        total_items = 3
+        denom_counts = {5: 1, 1:2}
+
+
+
