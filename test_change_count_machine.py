@@ -22,3 +22,6 @@ class TestSimpleChange:
         money = .15
         assert main(money) == 2
 
+    def test_20_cent(self):
+        money = .20
+        assert main(money) == 2
