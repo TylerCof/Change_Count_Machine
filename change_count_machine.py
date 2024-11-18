@@ -1,3 +1,6 @@
+#Tyler Coffie
+#11/18/2024
+
 def dime(money_left):
     items = 0
     money_left = round(money_left, 2)  # Round to handle potential precision issues
