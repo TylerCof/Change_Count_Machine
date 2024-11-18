@@ -1,5 +1,5 @@
 import pytest
-from change_machine import main
+from change_count_machine import main
 
 class TestSimpleChange:
     def test_penny(self):
