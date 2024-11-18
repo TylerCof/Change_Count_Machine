@@ -13,14 +13,17 @@ def denominations_calc(money_left,dom):
 
 def main(money):
     denom_list = [100, 50, 20, 10, 5, 1, 0.25, 0.10, 0.05, 0.01]
+    denom_counts = {} #Track each denominations count
     money_left = round(money,2)
     total_items = 0
     loop_val = 0
     while (money_left > 0) and loop_val < len(denom_list):
         [money_left, items] = denominations_calc(money_left,denom_list[loop_val])
         total_items += items
+        if items > 0:
+            denom_counts[denom_list[loop_val]] = items  # Store count of each denomination
         loop_val += 1
-    return total_items
+    return total_items, denom_counts
 
 
 
