@@ -1,6 +1,8 @@
 import pytest
 from change_count_machine import main
 
+#Tests for proof of logic 
+
 class TestSimpleChange:
     def test_penny(self):
         money = .01
@@ -25,3 +27,11 @@ class TestSimpleChange:
     def test_20_cent(self):
         money = .20
         assert main(money) == 2
+
+
+#Start of testing for refined calculator
+
+class TestVarietyChange:
+    def test_103_17(self):
+        money = 103.17
+        assert main(money) == 8
