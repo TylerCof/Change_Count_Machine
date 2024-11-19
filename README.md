@@ -13,7 +13,7 @@ The Change Count Machine is a Python application that calculates the optimal den
 - **Purpose**: Contains the core functionality for calculating the denomination breakdown.
 - **Key Functions**:
   - `denominations_calc(money_left, dom)': Determines how many of a specific denomination can be used for the given amount.
-  - `calculate_denominations(money)': Iteratively calculates the optimal denomination breakdown for the input amount.
+  - `compute_change(money)': Iteratively calculates the optimal denomination breakdown for the input amount.
 
 ### 2. `gui.py`
 - **Purpose**: Provides a graphical user interface for interacting with the Change Count Machine.
