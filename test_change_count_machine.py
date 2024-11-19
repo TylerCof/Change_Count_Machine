@@ -6,8 +6,8 @@ class TestSimpleChange:
     def test_penny(self):
         money = 0.01
         total_items, denom_counts = main(money)
-        assert total_items == 1
-        assert denom_counts == {0.01: 1}
+        assert total_items == 1 #Check for expected total items
+        assert denom_counts == {0.01: 1} #Check for expected breakdown of items
 
     def test_2_cent(self):
         money = 0.02
@@ -67,13 +67,13 @@ class TestEdgeCases:
         total_items = 1
         denom_counts = {5: 1}
 
-    def test_bad_num(self):    #In the future if given as input this will not be allowed but for logic testing this should be the result
+    def test_bad_num(self):    #This input is not allowed from the user but still testing expected output
         money = -1
         total_items, denom_counts = main(money)
         total_items = 0
         denom_counts = {}
 
-    def test_rounding(self):    #In the future if given as input this will not be allowed but for logic testing this should be the result
+    def test_rounding(self):    #Currently this input is allowed from the user but any input after the 2nd decimal place is ignored
         money = 7.005
         total_items, denom_counts = main(money)
         total_items = 3

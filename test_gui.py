@@ -7,12 +7,12 @@ import tkinter as tk
 @pytest.fixture
 def gui_app():
     """Fixture to set up and tear down the Tkinter app."""
-    from gui import create_gui  # This is the function from the GUI
+    from gui import create_gui
     root, entry, calculate_button, result_label = create_gui()
     yield root, entry, calculate_button, result_label
     root.destroy()
 
-def test_tkinter_gui(gui_app):
+def test_tkinter_gui(gui_app): #Test for basic functionality of the GUI
     root, entry, calculate_button, result_label = gui_app
 
     # Simulate user input

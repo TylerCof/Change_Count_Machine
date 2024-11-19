@@ -10,16 +10,16 @@ def create_gui():
             if money < 0:
                 messagebox.showerror("Error", "Amount cannot be negative.")
                 return
-            total_items, denom_counts = main(money)
+            total_items, denom_counts = main(money) #Collecting results from main
             result_text = f"Total items: {total_items}\nDenomination breakdown:\n"
             for denom, count in denom_counts.items():
                 result_text += f"${denom:.2f}: {count}\n"
-            result_label.config(text=result_text)
+            result_label.config(text=result_text) #Displaying results to the GUI
         except ValueError:
             messagebox.showerror("Error", "Invalid input. Please enter a numeric value.")
 
     root = tk.Tk()
-    entry = tk.Entry(root)
+    entry = tk.Entry(root) #Text entry
     calculate_button = tk.Button(root, text="Calculate", command=on_calculate)
     result_label = tk.Label(root, text="")
 
@@ -27,8 +27,7 @@ def create_gui():
     calculate_button.pack()
     result_label.pack()
 
-    return root, entry, calculate_button, result_label
+    return root, entry, calculate_button, result_label #For testing returning GUI features
 
 #Leave commented for testing
-#Uncomment to use GUI
-create_gui()[0].mainloop()
+create_gui()[0].mainloop() #Uncomment to use GUI
