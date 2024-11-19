@@ -58,5 +58,5 @@ The Change Count Machine is a Python application that calculates the optimal den
 
 ## Testing
 - The GUI components ( 'root', 'entry', 'calculate_button', 'result_label') are returned for unit testing in 'create_gui()'.
-- Uncomment 'create_gui()[0].mainloop()' for use.
+- Comment 'create_gui()[0].mainloop()' for testing use.
 
