@@ -11,7 +11,7 @@ def denominations_calc(money_left,dom):
 
     return money_left, items
 
-def main(money):
+def compute_change(money):
     denom_list = [100, 50, 20, 10, 5, 1, 0.25, 0.10, 0.05, 0.01] #List of denominations of currency, can be changed at will for additional denominations (such as 2, .5, etc)
     denom_counts = {} #Track each denominations count
     money_left = round(money,2) 
