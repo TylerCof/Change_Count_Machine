@@ -28,13 +28,29 @@ def create_gui():
             messagebox.showerror("Error", "Invalid input. Please enter a numeric value.")
 
     root = tk.Tk()
-    entry = tk.Entry(root) #Text entry
-    calculate_button = tk.Button(root, text="Calculate", command=on_calculate)
-    result_label = tk.Label(root, text="")
+    root.title("Change Count Machine")
 
-    entry.pack()
-    calculate_button.pack()
-    result_label.pack()
+    # Create a frame to contain both the dollar sign and the entry widget
+    entry_frame = tk.Frame(root)
+    
+    # Create a label for the dollar sign
+    dollar_sign_label = tk.Label(entry_frame, text="$", font=("Arial", 12))
+    
+    # Create the entry widget for user input
+    entry = tk.Entry(entry_frame, font=("Arial", 12))
+    
+    # Pack the label and entry widget in the frame
+    dollar_sign_label.pack(side="left")
+    entry.pack(side="left")
+    
+
+    calculate_button = tk.Button(root, text="Calculate", command=on_calculate)
+    result_label = tk.Label(root, text="", font=("Arial", 12))
+
+    # Pack the widgets
+    entry_frame.pack(pady=5)
+    calculate_button.pack(pady=5)
+    result_label.pack(pady=10)
 
     return root, entry, calculate_button, result_label #For testing returning GUI features
 
