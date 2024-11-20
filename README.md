@@ -59,6 +59,7 @@ The Change Count Machine is a Python application that calculates the optimal den
 ## Testing
 - The GUI components ( 'root', 'entry', 'calculate_button', 'result_label') are returned for unit testing in 'create_gui()'.
 - To run tests either use "pytest" for all tests or "pytest _test_file_name_".
+- To run tests either be in the "root" directory or "tests" directory (tests will not run as stated inside the "src" directory).
 
 ## Testing Notes
 - Comment 'create_gui()[0].mainloop()' when running all tests or tests with 'test_gui.py'.
