@@ -17,7 +17,7 @@ def compute_change(money):
     money_left = round(money,2) 
     total_items = 0
     loop_val = 0 #To make sure denom_list is at the correct iteration and to make sure denom_list is not out of bounds
-    while (money_left > 0) and loop_val < len(denom_list):
+    while (money_left > 0):
         [money_left, items] = denominations_calc(money_left,denom_list[loop_val])
         total_items += items
         if items > 0:

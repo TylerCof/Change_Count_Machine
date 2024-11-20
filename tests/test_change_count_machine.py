@@ -1,5 +1,5 @@
 import pytest
-from change_count_machine import compute_change
+from src.change_count_machine import compute_change
 
 # Tests for proof of logic
 class TestSimpleChange:

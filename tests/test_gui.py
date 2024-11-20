@@ -1,6 +1,6 @@
 import pytest
-from change_count_machine import compute_change
-from gui import create_gui
+from src.change_count_machine import compute_change
+from src.gui import create_gui
 from unittest.mock import patch
 import tkinter as tk
 
