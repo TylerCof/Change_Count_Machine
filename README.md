@@ -27,7 +27,7 @@ The Change Count Machine is a Python application that calculates the optimal den
   - Button to trigger clearing of SQL database.
   - Display area for showing the results.
  
-### 3. 'db_utils.py'
+### 3. `db_utils.py`
 - **Purpose**: Contains the functionality for the SQL database
 - **Features**:
   -  `create_db(cursor)': Creates the SQL table.
