@@ -6,6 +6,8 @@ The Change Count Machine is a Python application that calculates the optimal den
 ## Features
 - Calculates the minimum number of denominations for any given amount.
 - Displays a detailed breakdown of the denominations used.
+- Saves results to SQL database that can be viewed later.
+- Ability to clear database of previously saved calculations.
 - User-friendly interface for entering the amount and viewing results.
 
 ## Files
@@ -13,18 +15,31 @@ The Change Count Machine is a Python application that calculates the optimal den
 - **Purpose**: Contains the core functionality for calculating the denomination breakdown.
 - **Key Functions**:
   - `denominations_calc(money_left, dom)': Determines how many of a specific denomination can be used for the given amount.
-  - `compute_change(money)': Iteratively calculates the optimal denomination breakdown for the input amount.
+  - `compute_loop(money_left,denom_list,denom_counts,total_items)': Iteratively calculates the optimal denomination breakdown for the input amount.
+  - `compute_change(money)': Holds the list of denominations, call "compute_loop" to preform it's loop, and returns results to the requester.
 
 ### 2. `gui.py`
 - **Purpose**: Provides a graphical user interface for interacting with the Change Count Machine.
 - **Features**:
   - Entry field for inputting the amount.
   - Button to trigger the calculation.
+  - Button to trigger the display for previous results.
+  - Button to trigger clearing of SQL database.
   - Display area for showing the results.
+ 
+### 3. 'db_utils.py'
+- **Purpose**: Contains the functionality for the SQL database
+- **Features**:
+  -  `create_db(cursor)': Creates the SQL table.
+  -  `check_and_create_db()': Checks if the SQL database already exists and if not call "create_db".
+  -  `insert_calculation(conn, cursor, amount, total_items, denom_counts)': Inserts a calculation from "change_count_machine.py" into the SQL database.
+  -  `def get_all_calculations(cursor)': Gathers all of the calculations in the SQL database and returns them.
+  -  `def clear_calculations(conn, cursor)': Clears the SQL database of previously saved calculations.
 
 ## Requirements
 - Python 3.x
 - Tkinter (included in most Python installations)
+- SQLite
 
 ## Installation
 1. Clone or download the repository.
@@ -43,6 +58,8 @@ The Change Count Machine is a Python application that calculates the optimal den
      ```
 2. Enter the desired monetary amount in the input field.
 3. Click "Calculate" to view the denomination breakdown.
+4. Click "View History" to view saved calculations.
+5. Click "Clear" to clear saved calculations (will need to confirm your choice).
 
 ## Example
 ### Input
